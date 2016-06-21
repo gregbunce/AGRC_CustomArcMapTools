@@ -193,6 +193,7 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Missing Vertex Locations";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnClearVertices
             // 
@@ -213,11 +214,14 @@
             this.lstMissingVertices.Size = new System.Drawing.Size(405, 94);
             this.lstMissingVertices.TabIndex = 0;
             this.lstMissingVertices.TabStop = false;
+            this.lstMissingVertices.SelectedIndexChanged += new System.EventHandler(this.lstMissingVertices_SelectedIndexChanged);
             this.lstMissingVertices.DoubleClick += new System.EventHandler(this.lstMissingVertices_DoubleClick);
             // 
             // chkDisplayVertices
             // 
             this.chkDisplayVertices.AutoSize = true;
+            this.chkDisplayVertices.Checked = true;
+            this.chkDisplayVertices.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkDisplayVertices.Location = new System.Drawing.Point(145, 404);
             this.chkDisplayVertices.Name = "chkDisplayVertices";
             this.chkDisplayVertices.Size = new System.Drawing.Size(180, 17);

@@ -142,7 +142,7 @@ namespace AgrcCustomArcMapTools
                 //get vertices for feature 1
                 //set up query filter for feature 1
                 IQueryFilter pQueryFilter = new QueryFilter();
-                pQueryFilter.WhereClause = "OBJECTID = '" + txtOID1.Text + "'";
+                pQueryFilter.WhereClause = "OBJECTID = " + txtOID1.Text;
 
                 //set up feature cursor for feature 1
                 IFeatureCursor pFeatureCursor = pFeatureLayer1.Search(pQueryFilter, false);
@@ -167,7 +167,7 @@ namespace AgrcCustomArcMapTools
                 //get vertices for feature 2
                 //set up query filter for feature 2
                 pQueryFilter = new QueryFilter();
-                pQueryFilter.WhereClause = "OBJECTID = '" + txtOID2.Text + "'";
+                pQueryFilter.WhereClause = "OBJECTID = " + txtOID2.Text;
 
                 //set up feature cursor for feature 2
                 pFeatureCursor = null; //reuse the feature cursor from above
@@ -545,6 +545,9 @@ namespace AgrcCustomArcMapTools
                     }
                 }
 
+                //clear the x,y report list box
+                lstMissingVertices.Items.Clear();
+
                 //refresh the map
                 pActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
                 pActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
@@ -557,6 +560,16 @@ namespace AgrcCustomArcMapTools
                 "Error Location:" + Environment.NewLine + ex.StackTrace,
                 "AGRC Custom Tools ArcMap Error!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void lstMissingVertices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
 
 
